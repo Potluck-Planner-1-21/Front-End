@@ -4,6 +4,7 @@ import './App.css';
 import Login from './component/Login';
 import SignUp from './component/SignUp';
 import CreateEvent from './component/CreateEvent';
+import HomePage from './component/HomePage';
 import PrivateRoute from './component/PrivateRoute';
 
 function App() {
@@ -28,15 +29,14 @@ function App() {
         </ul>
 
       <Switch>
-        <PrivateRoute exact path="/create-your-event"
-        component={CreateEvent}
+        <PrivateRoute exact path="/home"
+        component={HomePage}
         />
         <Route path="/login" component={SignUp} />
         <Route path="/login" component={Login} />
         </Switch>
+        <Route path="/login" component={Login} />
         
-        <Route exact path="/" component={SignUp} />
-        <Route path="/" component={Login} />
         
         
         
