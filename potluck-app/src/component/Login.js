@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   // make a post request to retrieve a token from the api
@@ -26,7 +27,7 @@ const Login = (props) => {
          .then(res => {
            console.log(res);
            localStorage.setItem("token", res.data.token) 
-           props.history.push("./create-your-event")
+           props.history.push("./home")
          }
            )
 
@@ -37,6 +38,7 @@ const Login = (props) => {
   return (
     <div>
     <form onSubmit={login}>
+      <h3>Don't have an account?<Link to="/register">Register here</Link></h3>
       <h1>LOGIN</h1>
       <input 
       type="name"
