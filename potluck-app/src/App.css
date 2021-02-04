@@ -57,6 +57,7 @@ input:placeholder {
 }
 
 button {
+  margin: 10px auto;
   width: 150px;
   display: inline-block;
   padding: 8px 11px;
@@ -125,9 +126,19 @@ li {
   color: #204963;
   font-size: 1.8rem
 }
+.user {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 a {
   text-decoration: none;
   padding: 6px;
   color: #204963;
 }
+
+ p {
+  font-size: 1.8rem;
+}
+

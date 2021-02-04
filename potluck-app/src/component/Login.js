@@ -23,7 +23,7 @@ const Login = (props) => {
        const login = (e)=> {
          e.preventDefault();
 
-         axiosWithAuth().post("/login", credentials)
+         axiosWithAuth().post("/users/login", credentials)
          .then(res => {
            console.log(res);
            localStorage.setItem("token", res.data.token) 
