@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Login from './component/Login';
 import SignUp from './component/SignUp';
-import Home from './component/Home';
+import HomePage from './component/HomePage';
 import PrivateRoute from './component/PrivateRoute';
 import CreateEvent from './component/CreateEvent';
 import Users from './component/Users';
@@ -46,7 +46,7 @@ function App() {
 
       <Switch>
         <PrivateRoute exact path="/home"
-        component={Home}
+        component={HomePage}
         />
         <Route path="/register" component={SignUp} />
         <Route path="/login" component={Login} />
