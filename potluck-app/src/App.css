@@ -1,59 +1,59 @@
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 .App {
-  font-family: sans-serif;
-  text-align: center;
+	font-family: sans-serif;
+	text-align: center;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 300px;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	max-width: 300px;
+	margin: 0 auto;
 }
 
 label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 10px 0;
-  font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 10px 0;
+	font-size: 1.4rem;
 }
 
 input,
 textarea {
-  width: 100%;
-  margin: 5px 0 0;
-  display: block;
-  width: 100%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px;
-  transition: all 0.3s;
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;
-  background-color: white;
+	width: 100%;
+	margin: 5px 0 0;
+	display: block;
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	padding: 10px;
+	transition: all 0.3s;
+	font-size: 1.4rem;
+	letter-spacing: 0.5px;
+	background-color: white;
 }
 select {
-  height: 40px;
-  width: 325px;
+	height: 40px;
+	width: 325px;
 }
 
 select:focus {
-  outline: none;
-  border-color: #1ee7e2;
+	outline: none;
+	border-color: #1ee7e2;
 }
 
 input:focus {
-  outline: none;
-  border-color: #1ee7e2;
+	outline: none;
+	border-color: #1ee7e2;
 }
 
 input:placeholder {
-  color: #a8b2b2;
+	color: #a8b2b2;
 }
 
 button {
@@ -75,56 +75,56 @@ button {
 }
 
 button:hover {
-  background-image: none;
-  background-color: #4dd0e1;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+	background-image: none;
+	background-color: #4dd0e1;
+	box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 button:disabled {
-  background-image: none;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.1);
-  cursor: not-allowed;
+	background-image: none;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: rgba(0, 0, 0, 0.1);
+	cursor: not-allowed;
 }
 
 .error {
-  font-size: 1.2rem;
-  color: red;
+	font-size: 1.2rem;
+	color: red;
 }
 
 .terms {
-  display: inline-block;
-  align-self: self-start;
+	display: inline-block;
+	align-self: self-start;
 }
 
 .terms input {
-  width: 15px;
-  display: inline-block;
-  margin-right: 5px;
+	width: 15px;
+	display: inline-block;
+	margin-right: 5px;
 }
 
 .login {
-  margin-top: 8rem;
+	margin-top: 8rem;
 }
 
-.instructor{
-  margin-top: 3rem;
+.instructor {
+	margin-top: 3rem;
 }
 
 ul {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 0 36px;
-  padding: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	display: flex;
+	justify-content: flex-end;
+	margin: 0 0 36px;
+	padding: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 li {
-  list-style: none;
-  margin-right: 6px;
-  color: #204963;
-  font-size: 1.8rem
+	list-style: none;
+	margin-right: 6px;
+	color: #204963;
+	font-size: 1.8rem;
 }
 .user {
   display: flex;
@@ -133,6 +133,7 @@ li {
 }
 
 a {
+
   text-decoration: none;
   padding: 6px;
   color: #204963;
@@ -141,4 +142,3 @@ a {
  p {
   font-size: 1.8rem;
 }
-
