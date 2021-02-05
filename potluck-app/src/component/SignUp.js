@@ -23,7 +23,7 @@ const SignUp = (props) => {
          e.preventDefault();
          props.history.push('./login');
 
-         axiosWithAuth().post("/register", credentials)
+         axiosWithAuth().post("/users/register", credentials)
          .then(res => {
            console.log(res);
         //    props.history.push("./login")
