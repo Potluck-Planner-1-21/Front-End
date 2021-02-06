@@ -53,7 +53,7 @@ function App() {
         />
         <Route path="/register" component={SignUp} />
         <Route path="/login" component={Login} />
-        <PrivateRoute path="/create-your-event" component={CreateEvent} />
+<PrivateRoute path="/create-your-event" component={CreateEvent} />
         <PrivateRoute path="/users" component={Users} />
         <Route
         path="/update-user/:id"
