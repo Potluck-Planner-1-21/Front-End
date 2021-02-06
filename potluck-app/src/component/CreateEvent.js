@@ -10,7 +10,7 @@ const CreateEvent = () => {
         time : "",
         location : "",
         organizer_id : 5
-        
+
     }
     
 

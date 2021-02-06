@@ -1,24 +1,28 @@
 
 export const initialState = {
-    eventDetails: [],
-    isPosting: false
+    users : [{
+        name: "",
+        email: ""
+    }]
+    ,
+    isFetching: false
+
 }
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case "POSTING_EVENT_START":
+        case "FETCHING_USERS_START":
             return {
                 ...state,
-                  isPosting: true
+                  isFetching: true,
             }
      
      
-       case "POSTING_EVENT_SUCCESS":
+       case "FETCHING_USERS_SUCCESS":
            return {
                ...state,
-               isPosting: false,
-               eventDetails: action.payload
-        
+               isFetching: false,
+               users: action.payload
            }
 
            default:
@@ -27,5 +31,3 @@ const reducer = (state = initialState, action) => {
         }    
 
 }
-
-export default reducer;

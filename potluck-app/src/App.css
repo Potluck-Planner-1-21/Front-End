@@ -142,3 +142,13 @@ a {
  p {
   font-size: 1.8rem;
 }
+
+
+.loading {
+  font-size: 4rem;
+  color: gray;
+  margin-top: 70px;
+}
+
+
+

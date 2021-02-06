@@ -8,6 +8,9 @@ import PrivateRoute from './component/PrivateRoute';
 import CreateEvent from './component/CreateEvent';
 import Users from './component/Users';
 import UpdateUser from './component/UpdateUser';
+import OngoingEvents from './component/OngoingEvents';
+import EventGallery from './component/EventGallery';
+
 import axios from 'axios';
 
 function App() {
@@ -55,7 +58,11 @@ function App() {
         <Route
         path="/update-user/:id"
         render={() => <UpdateUser users={users} setUsers={setUsers} />}
-      />
+        />
+        
+        <Route exact path={'/ongoing-events'} component={OngoingEvents} />
+        <Route exact path={'/event-gallery'} component={EventGallery} />
+      
         
         </Switch>
         
