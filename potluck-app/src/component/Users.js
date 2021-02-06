@@ -1,40 +1,34 @@
 import React, { useReducer, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { initialState, reducer } from '../reducer/index';
+import { fetchUsers } from '../actions';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 
-const Users = (props) => {
+const Users = ({fetchUsers, isFetching, users}) => {
     
-    // const [users, setUsers] = useState([]);
-    const [state, dispatch] = useReducer(reducer, initialState);
+  const { push } = useHistory();
+
+    // const [state, dispatch] = useReducer(reducer, initialState);
 
     function routeToItem(e, user) {
         e.preventDefault();
-        props.history.push(`/update-user/${user.id}`);
+        push(`/update-user/${user.id}`);
       }
 
     useEffect(()=> {
-       axiosWithAuth().get("/users")
-       .then(res => {
-           console.log(res.data)
-          //  setUsers(res.data)
-          dispatch({
-            type: "FETCHING_USERS_SUCCESS",
-            payload: res.data,
-            isFetching: false
-          })
-       })
-       .catch(err => console.log(err))
+      fetchUsers();
     }, [])
 
   return (
     <div>
       <h1>List of Users</h1>
-       {(state.isFetching) ? 
-       <h1>...loading</h1> : (
+       {(isFetching) ? 
+       <h1 className="loading">...Loading</h1> : (
         <div>
-        {state.users.map(user => {
+        {users.map(user => {
           // console.log("hello", state.users);
            return (
                <ul className="user" key={user.id}>
@@ -58,4 +52,13 @@ const Users = (props) => {
   );
 };
 
-export default Users;
+const mapStateToProps = (state) => {
+  return {
+   users: state.users,
+   isFetching: state.isFetching
+}
+}
+
+const mapDispatchToProps = {fetchUsers}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

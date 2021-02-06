@@ -5,7 +5,6 @@ export const initialState = {
         email: ""
     }]
     ,
-    
     isFetching: false
 
 }
