@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { initialState, reducer } from '../reducer/index';
+
 
 
 const Users = (props) => {
     
-    const [users, setUsers] = useState([]);
+    // const [users, setUsers] = useState([]);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     function routeToItem(e, user) {
         e.preventDefault();
@@ -15,7 +18,12 @@ const Users = (props) => {
        axiosWithAuth().get("/users")
        .then(res => {
            console.log(res.data)
-           setUsers(res.data)
+          //  setUsers(res.data)
+          dispatch({
+            type: "FETCHING_USERS_SUCCESS",
+            payload: res.data,
+            isFetching: false
+          })
        })
        .catch(err => console.log(err))
     }, [])
@@ -23,8 +31,11 @@ const Users = (props) => {
   return (
     <div>
       <h1>List of Users</h1>
-      
-        {users.map((user)=> {
+       {(state.isFetching) ? 
+       <h1>...loading</h1> : (
+        <div>
+        {state.users.map(user => {
+          // console.log("hello", state.users);
            return (
                <ul className="user" key={user.id}>
                <li>{user.name}</li>
@@ -33,12 +44,15 @@ const Users = (props) => {
                </ul>
                
            )
+           
         })
         
+        
         }
-        
-        
+        </div>
+       )}
     </div>
+       
     
     
   );
