@@ -1,6 +1,4 @@
-import React, { useReducer, useEffect } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { initialState, reducer } from '../reducer/index';
+import React, { useEffect } from "react";
 import { fetchUsers } from '../actions';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -11,8 +9,6 @@ const Users = ({fetchUsers, isFetching, users}) => {
     
   const { push } = useHistory();
 
-    // const [state, dispatch] = useReducer(reducer, initialState);
-
     function routeToItem(e, user) {
         e.preventDefault();
         push(`/update-user/${user.id}`);
@@ -20,7 +16,7 @@ const Users = ({fetchUsers, isFetching, users}) => {
 
     useEffect(()=> {
       fetchUsers();
-    }, [])
+    }, [fetchUsers])
 
   return (
     <div>
